@@ -1,2 +1,0 @@
-https://metr.org/common-elements
-https://openrouter.ai/docs/api

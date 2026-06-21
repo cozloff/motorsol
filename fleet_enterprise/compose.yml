@@ -1,0 +1,18 @@
+services:
+  contacts-backend:
+    profiles:
+      - dev
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: development
+    environment:
+      # Localhost certificate configs
+      - ASPNETCORE_ENVIRONMENT=Development
+      - DOTNET_WATCH_RESTART_ON_RUDE_EDIT=true
+      - ConnectionStrings__FleetEnterpriseDB=${SQL_CONNECTION_STRING}
+    develop:
+      watch:
+        - action: sync
+          path: ./backend/FleetEnterprise.Api
+          target: /source/FleetEnterprise.Api
