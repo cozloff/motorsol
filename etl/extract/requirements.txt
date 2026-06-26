@@ -1,2 +1,5 @@
-requests
+﻿requests
 python-dotenv
+rasterio
+folium
+pillow
